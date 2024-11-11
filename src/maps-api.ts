@@ -10,10 +10,5 @@ export async function getPlaceAutocomplete(key: string, address: string, additio
             ...additionalParams
         }
     });
-    return autocomplete.data.results.map((result) => {
-        return {
-            placeId: result.id,
-            address: result.address,
-        }
-    })
+    return autocomplete.data.results
 }

@@ -16,7 +16,7 @@ export async function getAutoCompleteDetails(address: any): Promise<[AddressResu
     // get autocomplete results
     const res = getPlaceAutocomplete(apiKey, address, { countrySet: 'AU' }).then(async (autocompleteResults) => {
         return autocompleteResults.map((result) => ({
-            placeId: result.placeId,
+            placeId: result.id,
             streetNumber: result.address.streetNumber,
             streetName: result.address.streetName,
             countryCode: result.address.countryCode,
