@@ -11,7 +11,7 @@ export type AddressResult = {
     postalCode: string,
 }
 
-export async function getAutoCompleteDetails(address: any): Promise<[AddressResult]> {
+export async function getAutoCompleteDetails(address: any): Promise<AddressResult[]> {
     const apiKey = process.env.TOMTOM_API_KEY;
     // get autocomplete results
     const res = getPlaceAutocomplete(apiKey, address, { countrySet: 'AU' }).then(async (autocompleteResults) => {
